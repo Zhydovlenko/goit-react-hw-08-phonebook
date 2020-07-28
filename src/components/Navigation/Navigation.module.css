@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex: 0 0 30%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #97c08e;
+}
+
+.link:hover,
+.link:focus {
+  color: #57b846;
+}
+
+.activeLink {
+  color: #57b846;
+}

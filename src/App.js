@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Suspense } from 'react';
+import { connect } from 'react-redux';
+import { BrowserRouter, Switch } from 'react-router-dom';
+import { contactsSelectors } from './redux/contacts';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Loader from './components/Loader/Loader';
+import Layout from './components/Layout/Layout';
+
+import routes from './routes';
+import PrivateRoute from './components/Routes/PrivateRoute';
+import PublicRoute from './components/Routes/PublicRoute';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Layout>
+          <Suspense
+            fallback={
+              <>
+                <Loader />
+              </>
+            }
+          >
+            <Switch>
+              {routes.map(route =>
+                route.private ? (
+                  <PrivateRoute key={route.label} {...route} />
+                ) : (
+                  <PublicRoute key={route.label} {...route} />
+                ),
+              )}
+            </Switch>
+          </Suspense>
+        </Layout>
+      </BrowserRouter>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  contacts: contactsSelectors.getContacts(state),
+});
+
+export default connect(mapStateToProps)(App);

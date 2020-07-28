@@ -1,0 +1,21 @@
+.container {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.searchTitle {
+  text-align: center;
+}
+
+.formInput {
+  font-size: 16px;
+  color: #555555;
+  outline: none;
+  display: block;
+  width: 236px;
+  height: 30px;
+  background: transparent;
+  padding: 0 5px;
+  border-radius: 25px;
+  margin: 0 auto;
+}
