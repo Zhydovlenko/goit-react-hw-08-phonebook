@@ -7,8 +7,8 @@ import Loader from './components/Loader/Loader';
 import Layout from './components/Layout/Layout';
 
 import routes from './routes';
-import PrivateRoute from './components/Routes/PrivateRoute';
-import PublicRoute from './components/Routes/PublicRoute';
+import PrivateRoute from './navigation/Routes/PrivateRoute';
+import PublicRoute from './navigation/Routes/PublicRoute';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -17,13 +17,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Layout>
-          <Suspense
-            fallback={
-              <>
-                <Loader />
-              </>
-            }
-          >
+          <Suspense fallback={<Loader />}>
             <Switch>
               {routes.map(route =>
                 route.private ? (

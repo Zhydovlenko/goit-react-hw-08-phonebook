@@ -4,11 +4,11 @@ import { authSelectors } from '../../redux/auth';
 import Navigation from './Navigation';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from './AuthNav';
-import Toggler from '../Toggler/Toggler';
+import Toggler from '../../navigation/Toggler/Toggler';
 
 import styles from './Navigation.module.css';
 
-const AppBar = ({ isAuthenticated }) => (
+const NavBar = ({ isAuthenticated }) => (
   <>
     <Toggler />
     <header className={styles.header}>
@@ -22,4 +22,4 @@ const mapStateToProps = state => ({
   isAuthenticated: authSelectors.isAuthenticated(state),
 });
 
-export default connect(mapStateToProps)(AppBar);
+export default connect(mapStateToProps)(NavBar);
