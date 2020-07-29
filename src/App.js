@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import { contactsSelectors } from './redux/contacts';
 
-import Loader from './components/Loader/Loader';
-import Layout from './components/Layout/Layout';
+import Loader from './components/common/Loader/Loader';
+import Layout from './components/common/Layout/Layout';
 
 import routes from './routes';
 import PrivateRoute from './navigation/Routes/PrivateRoute';

@@ -5,7 +5,7 @@ import { contactsSelectors, contactsOperations } from '../redux/contacts';
 import ContactForm from '../components/ContactForm/ContactForm';
 import ContactList from '../components/ContactList/ContactList';
 import Filter from '../components/Filter/Filter';
-import Loader from '../components/Loader/Loader';
+import Loader from '../components/common/Loader/Loader';
 
 import styles from './Views.module.css';
 import 'react-toastify/dist/ReactToastify.css';

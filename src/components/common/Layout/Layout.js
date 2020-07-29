@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import NavBar from '../Navigation/NavBar';
+import NavBar from '../../Navigation/NavBar';
 
-import { themeConfig } from '../../context/ThemeContext';
+import { themeConfig } from '../../../context/ThemeContext';
 import 'react-toastify/dist/ReactToastify.css';
-import themeSelectors from '../../redux/theme/themeSelectors';
+import themeSelectors from '../../../redux/theme/themeSelectors';
 
 import styles from './Layout.module.css';
 const Layout = ({ children, theme }) => (

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { authOperations } from '../redux/auth';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+
 import styles from './Views.module.css';
 
 class RegisterView extends Component {
